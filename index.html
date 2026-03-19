@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ご利用アンケート</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- ロゴ -->
+    <img src="logo.png" alt="ロゴ" class="logo">
+
+    <!-- タイトル -->
+    <h1>🍞 本日のご利用、いかがでしたか？</h1>
+    <p class="subtext">
+      よろしければ感想を教えてください☺️
+    </p>
+
+    <p class="message">
+      スタッフ一同、ひとつひとつ丁寧に焼き上げています。
+    </p>
+
+    <!-- 星評価 -->
+    <div class="stars">
+      <span class="star" data-value="1">★</span>
+      <span class="star" data-value="2">★</span>
+      <span class="star" data-value="3">★</span>
+      <span class="star" data-value="4">★</span>
+      <span class="star" data-value="5">★</span>
+    </div>
+
+    <!-- 高評価 -->
+    <div id="good" class="hidden">
+      <p>ありがとうございます☺️</p>
+      <p>そのご意見を口コミでいただけると嬉しいです🙏</p>
+      <p class="note">※30秒ほどで終わります</p>
+
+      <a href="https://g.page/r/CZKNKglrOZN-EAE/review" target="_blank" class="btn">
+        口コミを書く
+      </a>
+    </div>
+
+    <!-- 低評価 -->
+    <div id="bad" class="hidden">
+      <p>貴重なご意見ありがとうございます。</p>
+      <p>より良いお店づくりのため、<br>教えていただけると助かります🙏</p>
+      <p class="note">※匿名でも大丈夫です</p>
+
+      <textarea id="feedback" placeholder="ご意見を入力してください"></textarea>
+      <button id="sendBtn" class="btn">送信する</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

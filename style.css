@@ -1,0 +1,183 @@
+/* リセット＆ズレ防止（超重要） */
+* {
+  box-sizing: border-box;
+}
+
+/* 全体 */
+body {
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  background: #fdf8f2;
+  margin: 0;
+  padding: 0;
+}
+
+/* コンテナ */
+.container {
+  max-width: 420px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fffaf3;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* ロゴ */
+.logo {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+/* テキスト */
+h1 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #5c4033;
+}
+
+.subtext {
+  font-size: 13px;
+  color: #8c6b4f;
+}
+
+.message {
+  font-size: 12px;
+  color: #a1887f;
+  margin-bottom: 15px;
+}
+
+.note {
+  font-size: 12px;
+  color: #a1887f;
+}
+
+/* 星 */
+.stars {
+  font-size: 38px;
+  margin: 20px 0;
+}
+
+.star {
+  color: #e0d5c3;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.star.active {
+  color: #f7b731;
+}
+
+.star:hover {
+  transform: scale(1.1);
+}
+
+/* 入力欄（ズレ完全対策済み） */
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin: 10px auto 0;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e0d5c3;
+  background: #fff;
+  font-size: 14px;
+}
+
+/* ボタン */
+.btn {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin: 15px auto 0;
+  padding: 14px;
+  background: #d9a066;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #c68c52;
+}
+
+/* 非表示 */
+.hidden {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a button {
+  cursor: pointer;
+}
+
+---
+
+/* 📱 スマホ対応 */
+@media (max-width: 480px) {
+
+  .container {
+    margin: 20px 12px;
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  h1 {
+    font-size: 16px;
+  }
+
+  .subtext {
+    font-size: 12px;
+  }
+
+  .message {
+    font-size: 11px;
+  }
+
+  .stars {
+    font-size: 34px;
+  }
+
+  textarea {
+    max-width: 100%;
+    height: 90px;
+    font-size: 13px;
+  }
+
+  .btn {
+    max-width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+---
+
+/* 💻 タブレット以上 */
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 500px;
+    padding: 30px;
+  }
+
+  .stars {
+    font-size: 42px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}
