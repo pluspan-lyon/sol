@@ -1,183 +1,311 @@
-/* リセット＆ズレ防止（超重要） */
+/* リセット＆ズレ防止 */
 * {
   box-sizing: border-box;
 }
 
-/* 全体 */
 body {
-  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
   background: #fdf8f2;
   margin: 0;
   padding: 0;
+  color: #5c4033;
 }
 
-/* コンテナ */
+/* 全体 */
 .container {
-  max-width: 420px;
-  width: 100%;
-  margin: 40px auto;
-  padding: 25px;
+  max-width: 480px;
+  width: calc(100% - 24px);
+  margin: 36px auto;
+  padding: 28px 24px;
   background: #fffaf3;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(92, 64, 51, 0.08);
   text-align: center;
   overflow: hidden;
 }
 
 /* ロゴ */
 .logo {
-  width: 120px;
-  margin-bottom: 15px;
+  width: 130px;
+  margin-bottom: 22px;
 }
 
 /* テキスト */
 h1 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0 0 12px;
   color: #5c4033;
+  text-align: center;
 }
 
 .subtext {
-  font-size: 13px;
+  font-size: 14px;
   color: #8c6b4f;
+  margin: 0 0 14px;
+  text-align: center;
 }
 
 .message {
+  font-size: 13px;
+  color: #a1887f;
+  line-height: 1.7;
+  margin: 0 0 24px;
+  text-align: center;
+}
+
+.small-note {
   font-size: 12px;
   color: #a1887f;
-  margin-bottom: 15px;
+  line-height: 1.6;
+  margin: 10px 0 0;
+  text-align: center;
 }
 
-.note {
-  font-size: 12px;
+/* 共通エリア */
+.result-area {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.thanks-box {
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.thanks-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #3f2a22;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.thanks-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #3f2a22;
+  margin: 0;
+  text-align: center;
+}
+
+/* カード */
+.action-card {
+  width: 100%;
+  padding: 18px;
+  border: 1px solid #ead8bd;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.62);
+  text-align: center;
+}
+
+.google-card {
+  margin-top: 18px;
+}
+
+.feedback-card {
+  margin-top: 0;
+}
+
+.card-heading {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.inline-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.map-icon,
+.feedback-icon {
+  flex: 0 0 auto;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.card-heading h2 {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #5c4033;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.card-text {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #8c6b4f;
+  margin: 0;
+  text-align: center;
+}
+
+/* 区切り */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 22px 0;
   color: #a1887f;
+  font-size: 13px;
+  text-align: center;
 }
 
-/* 星 */
-.stars {
-  font-size: 38px;
-  margin: 20px 0;
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5d1b5;
 }
 
-.star {
-  color: #e0d5c3;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.star.active {
-  color: #f7b731;
-}
-
-.star:hover {
-  transform: scale(1.1);
-}
-
-/* 入力欄（ズレ完全対策済み） */
+/* 入力欄 */
 textarea {
   display: block;
   width: 100%;
-  max-width: 360px;
-  margin: 10px auto 0;
-  padding: 12px;
-  border-radius: 10px;
+  min-height: 130px;
+  margin: 12px auto 0;
+  padding: 13px;
+  border-radius: 12px;
   border: 1px solid #e0d5c3;
   background: #fff;
+  color: #5c4033;
   font-size: 14px;
+  line-height: 1.6;
+  resize: vertical;
+  text-align: center;
+}
+
+textarea::placeholder {
+  color: #9b9287;
+  text-align: center;
 }
 
 /* ボタン */
 .btn {
   display: block;
   width: 100%;
-  max-width: 360px;
-  margin: 15px auto 0;
+  margin: 14px auto 0;
   padding: 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
   background: #d9a066;
   color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: 0.2s;
+  border: 1px solid #d9a066;
 }
 
-.btn:hover {
+.btn-primary:hover {
   background: #c68c52;
+  border-color: #c68c52;
 }
 
-/* 非表示 */
-.hidden {
-  display: none;
+.btn-secondary {
+  background: #fff;
+  color: #d58945;
+  border: 1px solid #d9a066;
+}
+
+.btn-secondary:hover {
+  background: #fff4e7;
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 a {
   text-decoration: none;
 }
 
-a button {
-  cursor: pointer;
-}
-
----
-
-/* 📱 スマホ対応 */
+/* スマホ対応 */
 @media (max-width: 480px) {
-
   .container {
-    margin: 20px 12px;
-    padding: 20px 15px;
-    border-radius: 12px;
+    width: calc(100% - 20px);
+    margin: 20px auto;
+    padding: 24px 18px;
+    border-radius: 14px;
   }
 
   .logo {
-    width: 100px;
+    width: 116px;
   }
 
   h1 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .subtext {
-    font-size: 12px;
-  }
-
-  .message {
-    font-size: 11px;
-  }
-
-  .stars {
-    font-size: 34px;
-  }
-
-  textarea {
-    max-width: 100%;
-    height: 90px;
     font-size: 13px;
   }
 
-  .btn {
-    max-width: 100%;
+  .message {
+    font-size: 12px;
+  }
+
+  .thanks-title {
+    font-size: 17px;
+  }
+
+  .thanks-text {
     font-size: 14px;
-    padding: 12px;
+  }
+
+  .action-card {
+    padding: 16px;
+  }
+
+  .card-heading h2 {
+    font-size: 15px;
+  }
+
+  .card-text {
+    font-size: 12px;
+  }
+
+  .map-icon,
+  .feedback-icon {
+    font-size: 22px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 13px;
   }
 }
 
----
-
-/* 💻 タブレット以上 */
-@media (min-width: 768px) {
-
-  .container {
-    max-width: 500px;
-    padding: 30px;
+/* 小さめスマホ対応 */
+@media (max-width: 360px) {
+  .inline-heading {
+    gap: 6px;
   }
 
-  .stars {
-    font-size: 42px;
+  .card-heading h2 {
+    font-size: 14px;
   }
 
-  h1 {
+  .map-icon,
+  .feedback-icon {
     font-size: 20px;
+  }
+}
+
+/* タブレット以上 */
+@media (min-width: 768px) {
+  .container {
+    max-width: 520px;
+    padding: 32px;
   }
 }

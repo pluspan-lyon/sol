@@ -4,19 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ご利用アンケート</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-  <div class="container">
+  <main class="container">
 
     <!-- ロゴ -->
     <img src="logo.png" alt="ロゴ" class="logo">
 
     <!-- タイトル -->
     <h1>🍞 本日のご利用、いかがでしたか？</h1>
+
     <p class="subtext">
       よろしければ感想を教えてください☺️
     </p>
@@ -25,37 +24,67 @@
       スタッフ一同、ひとつひとつ丁寧に焼き上げています。
     </p>
 
-    <!-- 星評価 -->
-    <div class="stars">
-      <span class="star" data-value="1">★</span>
-      <span class="star" data-value="2">★</span>
-      <span class="star" data-value="3">★</span>
-      <span class="star" data-value="4">★</span>
-      <span class="star" data-value="5">★</span>
-    </div>
+    <!-- 全員共通表示 -->
+    <section class="result-area">
 
-    <!-- 高評価 -->
-    <div id="good" class="hidden">
-      <p>ありがとうございます☺️</p>
-      <p>そのご意見を口コミでいただけると嬉しいです🙏</p>
-      <p class="note">※30秒ほどで終わります</p>
+      <div class="thanks-box">
+        <p class="thanks-title">ありがとうございます☺️</p>
+        <p class="thanks-text">
+          実際に感じたことを、率直にお聞かせください。
+        </p>
+      </div>
 
-      <a href="https://g.page/r/CZKNKglrOZN-EAE/review" target="_blank" class="btn">
-        口コミを書く
-      </a>
-    </div>
+      <!-- Google口コミ導線 -->
+      <div class="action-card google-card">
+        <div class="card-heading inline-heading">
+          <span class="map-icon">📍</span>
+          <h2>Googleマップに口コミを書く</h2>
+        </div>
 
-    <!-- 低評価 -->
-    <div id="bad" class="hidden">
-      <p>貴重なご意見ありがとうございます。</p>
-      <p>より良いお店づくりのため、<br>教えていただけると助かります🙏</p>
-      <p class="note">※匿名でも大丈夫です</p>
+        <p class="card-text">
+          実際に感じたことを、率直にご投稿ください。
+        </p>
 
-      <textarea id="feedback" placeholder="ご意見を入力してください"></textarea>
-      <button id="sendBtn" class="btn">送信する</button>
-    </div>
+        <a
+          href="https://g.page/r/CZKNKglrOZN-EAE/review"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+          口コミを書く
+        </a>
 
-  </div>
+        <p class="small-note">※外部サイト（Googleマップ）へ移動します</p>
+      </div>
+
+      <div class="divider">
+        <span>または</span>
+      </div>
+
+      <!-- 店舗への直接意見 -->
+      <div class="action-card feedback-card">
+        <div class="card-heading inline-heading">
+          <span class="feedback-icon">💬</span>
+          <h2>店舗へ直接ご意見を送る</h2>
+        </div>
+
+        <p class="card-text">
+          味・接客・品揃えなど、どんなことでも大丈夫です。<br>
+          より良いお店づくりの参考にさせていただきます。
+        </p>
+
+        <textarea id="feedback" placeholder="ご意見を入力してください"></textarea>
+
+        <button id="sendBtn" class="btn btn-secondary">
+          ご意見を送信する
+        </button>
+
+        <p class="small-note">※こちらは店舗に直接届くご意見フォームです</p>
+      </div>
+
+    </section>
+
+  </main>
 
   <script src="script.js"></script>
 </body>
